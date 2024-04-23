@@ -1,4 +1,4 @@
 rootProject.name = 'one-api-ms'
 include 'config-service'
-include 'register-service'
+include 'registry-service'
 
