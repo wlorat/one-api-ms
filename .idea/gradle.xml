@@ -10,7 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/config-service" />
-            <option value="$PROJECT_DIR$/register-service" />
+            <option value="$PROJECT_DIR$/registry-service" />
           </set>
         </option>
       </GradleProjectSettings>
