@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.virtualizat.one.plataform.entity.enums.Category;
+import org.virtualizat.one.plataform.entity.enums.State;
 
 import java.util.HashSet;
 import java.util.List;
@@ -29,6 +30,9 @@ public class Module {
     private String description;
     @Enumerated(EnumType.STRING)
     private Category category;
+    @Enumerated(EnumType.STRING)
+    @Column(name="state")
+    private State state;
     @OneToMany(
             mappedBy = "module",
             cascade = CascadeType.ALL,

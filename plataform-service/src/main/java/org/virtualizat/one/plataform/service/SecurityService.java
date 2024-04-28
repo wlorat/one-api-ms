@@ -11,7 +11,7 @@ public interface SecurityService {
     public User getUser(UUID id);
     public User createUser(User user);
     public User updateUser(User user);
-    public User deleteUser(User user);
+    public User deleteUser(UUID id);
 
     public List<User> findByState(State state);
 }

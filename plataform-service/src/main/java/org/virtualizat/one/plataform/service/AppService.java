@@ -19,6 +19,6 @@ public interface AppService {
     Role updateRole(Role role);
     Module updateModule(UUID id, Module moduleDetails);
 
-    void deleteRole(Role role);
-    void deleteModule(Module module);
+    Role deleteRole(UUID id);
+    Module deleteModule(UUID id);
 }

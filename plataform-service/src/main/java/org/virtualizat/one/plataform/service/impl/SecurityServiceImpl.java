@@ -72,8 +72,8 @@ public class SecurityServiceImpl implements SecurityService {
     }
 
     @Override
-    public User deleteUser(User user) {
-        User userDB = getUser(user.getId());
+    public User deleteUser(UUID id) {
+        User userDB = getUser(id);
         if (null == userDB) {
             return null;
         }

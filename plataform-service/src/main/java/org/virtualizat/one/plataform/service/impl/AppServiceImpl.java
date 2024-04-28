@@ -6,6 +6,7 @@ import org.virtualizat.one.plataform.entity.Module;
 import org.virtualizat.one.plataform.entity.Option;
 import org.virtualizat.one.plataform.entity.Role;
 import org.virtualizat.one.plataform.entity.enums.Rol;
+import org.virtualizat.one.plataform.entity.enums.State;
 import org.virtualizat.one.plataform.repository.ModuleRepository;
 import org.virtualizat.one.plataform.repository.RoleRepository;
 import org.virtualizat.one.plataform.service.AppService;
@@ -91,12 +92,24 @@ public class AppServiceImpl implements AppService {
     }
 
     @Override
-    public void deleteRole(Role role) {
-        roleRepository.delete(role);
+    public Role deleteRole(UUID id) {
+        Role role = roleRepository.findById(id).orElse(null);
+        if (role != null) {
+            role.setState(State.DELETED);
+            roleRepository.save(role);
+            return role;
+        }
+        return null;
     }
 
     @Override
-    public void deleteModule(Module module) {
-        moduleRepository.delete(module);
+    public Module deleteModule(UUID id) {
+        Module module = moduleRepository.findById(id).orElse(null);
+        if (module != null) {
+            module.setState(State.DELETED);
+            moduleRepository.save(module);
+            return module;
+        }
+        return null;
     }
 }

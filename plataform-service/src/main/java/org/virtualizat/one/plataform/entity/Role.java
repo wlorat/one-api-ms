@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.virtualizat.one.plataform.entity.enums.Rol;
+import org.virtualizat.one.plataform.entity.enums.State;
 
 import java.util.Set;
 import java.util.UUID;
@@ -22,6 +23,9 @@ public class Role {
     @Enumerated(EnumType.STRING)
     @Column(name="role")
     private Rol rol;
+    @Enumerated(EnumType.STRING)
+    @Column(name="state")
+    private State state;
     @ManyToMany(mappedBy = "roles")
     private Set<Module> modules;
 }
